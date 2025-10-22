@@ -13,4 +13,10 @@ class AppTest {
     void greet_personalized() {
         assertEquals("Hello, Alice!", App.greet("Alice"));
     }
+
+    // New test case added below
+    @Test
+    void greet_personalized_withSpaces() {
+        assertEquals("Hello, Bob!", App.greet("  Bob  "));
+    }
 }
