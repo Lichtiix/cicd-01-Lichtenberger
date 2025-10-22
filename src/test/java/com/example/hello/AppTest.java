@@ -14,9 +14,8 @@ class AppTest {
         assertEquals("Hello, Alice!", App.greet("Alice"));
     }
 
-    // New test case added below //schlägt fehl
     @Test
     void greet_personalized_withSpaces() {
-        assertEquals("Hello, Bob!", App.greet(" Bob "));
+        assertEquals("Hello, Bob!", App.greet(" Bob ")); // This test now passes after trimming spaces in App.greet
     }
 }

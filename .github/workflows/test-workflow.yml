@@ -25,3 +25,10 @@ jobs:
 
       - name: Run tests
         run: mvn -B -DiskTests=false test
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports
