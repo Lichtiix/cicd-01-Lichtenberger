@@ -1,0 +1,25 @@
+name: Test Workflow
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tests/**" # Dieser Workflow wird nur ausgelöst, wenn Dateien im Ordner "tests" geändert werden
+  pull_request:
+    paths:
+      - "tests/**"
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Run tests
+        run: mvn test
