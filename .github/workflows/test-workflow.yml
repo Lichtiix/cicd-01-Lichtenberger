@@ -3,10 +3,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "tests/**" # Dieser Workflow wird nur ausgelöst, wenn Dateien im Ordner "tests" geändert werden
+      - "src/**" # Dieser Workflow wird nur ausgelöst, wenn Dateien im Ordner "src" geändert werden
   pull_request:
     paths:
-      - "tests/**"
+      - "src/**"
 
 jobs:
   run-tests:
