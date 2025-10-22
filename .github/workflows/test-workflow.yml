@@ -13,7 +13,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Cloning Repo, rockn´n roll
         uses: actions/checkout@v3
 
       - name: Set up JDK
@@ -21,6 +21,7 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "17"
+          cache: maven
 
       - name: Run tests
         run: mvn -B -DiskTests=false test
