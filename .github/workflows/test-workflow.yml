@@ -5,9 +5,15 @@ on:
     paths:
       - "src/**" # Dieser Workflow wird nur ausgelöst, wenn Dateien im Ordner "src" geändert werden
   pull_request:
+    branches: [main]
     paths:
       - "src/**"
   workflow_dispatch: # Ermöglicht das manuelle Auslösen des Workflows
+
+# Add at workflow top-level (or job-level):
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   run-tests:
